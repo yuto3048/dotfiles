@@ -120,10 +120,12 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 ### Macports ###
 case "${OSTYPE}" in
   darwin*)
-    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+    export PATH=/opt/local/bin:/opt/local/sbin:/home/yuto/Android/Sdk/platform-tools:$PATH
     export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
   ;;
 esac
+
+export PATH=/home/yuto/Android/Sdk/platform-tools/:$PATH
 
 autoload -U compinit && compinit
 zstyle ':completion:*:(processes|jobs)' menu yes select=2

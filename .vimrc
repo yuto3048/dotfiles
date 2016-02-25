@@ -1,5 +1,9 @@
 syntax enable
 
+if &compatible
+  set nocompatible
+endif
+
 set number
 set ruler
 set list
@@ -19,8 +23,33 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set helplang=en
+set background=dark
+set runtimepath+=~/.vim/bundle/neobundle.vim/
 
-colorscheme desert
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+
+NeoBundle 'altercation/vim-colors-solarized'
+
+NeoBundle 'Shougo/vimshell',{'rev':'3787e5'}
+
+NeoBundleCheck
+
+call neobundle#end()
+
+filetype plugin indent on
+
+colorscheme solarized
+
+let g:solarized_termtrans=1
+let s:back='NONE'
 
 nnoremap <Space>w  :<C-u>w<CR>
 nnoremap <Space>q  :<C-u>q<CR>
