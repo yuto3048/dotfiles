@@ -143,6 +143,10 @@ alias ping='ping -c 3'
 alias history='history-all'
 alias uninstallapp='adb shell pm list package | sed -e s/package:// | peco | xargs adb uninstall'
 alias ardour='ardour4 &'
+alias touchscreen_enable='xinput set-in-prop "ELAN Touchscreen" "Device Enabled" 8 1'
+alias touchscreen_disable='xinput set-in-prop "ELAN Touchscreen" "Device Enabled" 8 0'
+alias touchpad_enable='xinput set-in-prop "PS/2 Generic Mouse" "Device Enabled" 8 1'
+alias touchpad_disalbe='xinput set-in-prop "PS/2 Generic Mouse" "Devise Enabled" 8 0'
 
 # cdコマンド実行後、lsを実行する
 function cd() {
