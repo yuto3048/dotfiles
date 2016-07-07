@@ -23,10 +23,10 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set helplang=en
-set background=dark
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+"set background=dark
+set runtimepath+=/home/yuto/dotfiles/.vim/bundle/neobundle.vim/
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('/home/yuto/dotfiles/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -46,7 +46,7 @@ call neobundle#end()
 
 filetype plugin indent on
 
-colorscheme solarized
+colorscheme default
 
 let g:solarized_termtrans=1
 let s:back='NONE'

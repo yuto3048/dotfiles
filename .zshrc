@@ -15,7 +15,7 @@ echo -ne "\033]0;${USER}@${HOST%%.*}\007"
 bindkey -v              # キーバインドをviモードに設定
 
 setopt no_beep           # ビープ音を鳴らさないようにする
-setopt auto_cd           # ディレクトリ名の入力のみで移動する 
+#setopt auto_cd           # ディレクトリ名の入力のみで移動する 
 setopt auto_pushd        # cd時にディレクトリスタックにpushdする
 setopt correct           # コマンドのスペルを訂正する
 setopt magic_equal_subst # =以降も補完する(--prefix=/usrなど)
@@ -143,10 +143,10 @@ alias ping='ping -c 3'
 alias history='history-all'
 alias uninstallapp='adb shell pm list package | sed -e s/package:// | peco | xargs adb uninstall'
 alias ardour='ardour4 &'
-alias touchscreen_enable='xinput set-in-prop "ELAN Touchscreen" "Device Enabled" 8 1'
-alias touchscreen_disable='xinput set-in-prop "ELAN Touchscreen" "Device Enabled" 8 0'
-alias touchpad_enable='xinput set-in-prop "PS/2 Generic Mouse" "Device Enabled" 8 1'
-alias touchpad_disalbe='xinput set-in-prop "PS/2 Generic Mouse" "Devise Enabled" 8 0'
+alias touchscreen_enable='xinput set-int-prop "ELAN Touchscreen" "Device Enabled" 8 1'
+alias touchscreen_disable='xinput set-int-prop "ELAN Touchscreen" "Device Enabled" 8 0'
+alias touchpad_enable='xinput set-int-prop "PS/2 BYD TouchPad" "Device Enabled" 8 1'
+alias touchpad_disable='xinput set-int-prop "PS/2 BYD TouchPad" "Device Enabled" 8 0'
 
 # cdコマンド実行後、lsを実行する
 function cd() {
