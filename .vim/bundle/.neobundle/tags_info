@@ -2,6 +2,7 @@ ctrlp.vim
 neobundle.vim
 neosnippet-snippets
 neosnippet.vim
+powerline
 vim-colors-solarized
 vim-colorschemes
 vim-fugitive

@@ -120,12 +120,12 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 ### Macports ###
 case "${OSTYPE}" in
   darwin*)
-    export PATH=/opt/local/bin:/opt/local/sbin:/home/yuto/Android/Sdk/platform-tools:$PATH
+    export PATH=/opt/local/bin:/opt/local/sbin:~/Android/Sdk/platform-tools:~/Android/Sdk/tools:~/.local/bin:$PATH
     export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
   ;;
 esac
 
-export PATH=/home/yuto/Android/Sdk/platform-tools/:$PATH
+export PATH=/home/yuto/Android/Sdk/platform-tools/:/home/yuto/Android/Sdk/tools/:~/.local/bin:~/pidcat/:~/Android/Ndk/:$PATH
 
 autoload -U compinit && compinit
 zstyle ':completion:*:(processes|jobs)' menu yes select=2
@@ -155,7 +155,9 @@ function cd() {
 
 ### rbenv ###
 eval "$(rbenv init -)"
- 
+
+### powerline ###
+. ~/.local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Created by newuser for 5.0.7
 export GTK_IM_MODULE=fcitx

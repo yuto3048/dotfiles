@@ -4,6 +4,9 @@ if &compatible
   set nocompatible
 endif
 
+set rtp+=~/.local/lib/python3.5/site-packages/powerline/bindings/vim
+set laststatus=2
+set showtabline=2
 set number
 set ruler
 set list
@@ -38,7 +41,9 @@ NeoBundle 'flazz/vim-colorschemes'
 
 NeoBundle 'altercation/vim-colors-solarized'
 
-NeoBundle 'Shougo/vimshell',{'rev':'3787e5'}
+NeoBundle 'Shougo/vimshell',{'rev': '3787e5'}
+
+NeoBundle 'powerline/powerline',{'rtl': 'powerline/bindings/vim'}
 
 NeoBundleCheck
 
