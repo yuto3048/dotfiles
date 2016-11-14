@@ -1,9 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/yuto/Android_build/Android/build'
-let g:netrw_dirhist_2='/home/yuto/Android_build/Android'
-let g:netrw_dirhist_3='/home/yuto/Android_build'
-let g:netrw_dirhist_4='/home/yuto'
-let g:netrw_dirhist_5='/home'
-let g:netrw_dirhist_6='/'
-let g:netrw_dirhist_7='/home/yuto/dotfiles'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/yuto/docker-jiji2/build/jiji'
+let g:netrw_dirhist_2='/home/yuto/docker-jiji2/build'
+let g:netrw_dirhist_3='/home/yuto/docker-jiji2/build/nginx'

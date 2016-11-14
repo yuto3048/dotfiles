@@ -126,6 +126,7 @@ case "${OSTYPE}" in
 esac
 
 export PATH=/home/yuto/Android/Sdk/platform-tools/:/home/yuto/Android/Sdk/tools/:~/.local/bin:~/pidcat/:~/Android/Ndk/:$PATH
+export XDG_CONFIG_HOME=$HHOME/.config
 
 autoload -U compinit && compinit
 zstyle ':completion:*:(processes|jobs)' menu yes select=2
