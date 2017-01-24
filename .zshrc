@@ -36,6 +36,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小�
 setopt extended_glob # グロブ機能を拡張する
 unsetopt caseglob    # ファイルグロブで大文字小文字を区別しない
 
+typeset -U path PATH
+
 ### History ###
 HISTFILE=~/.zsh_history   # ヒストリを保存するファイル
 HISTSIZE=10000            # メモリに保存されるヒストリの件数
@@ -126,7 +128,13 @@ case "${OSTYPE}" in
 esac
 
 export PATH=/home/yuto/Android/Sdk/platform-tools/:/home/yuto/Android/Sdk/tools/:~/.local/bin:~/pidcat/:~/Android/Ndk/:$PATH
-export XDG_CONFIG_HOME=$HHOME/.config
+export XDG_CONFIG_HOME=$HOME/.config
+
+path=(
+    # allow directories only (-/)
+    # reject world-writable directories (^W)
+    ${^path}(N-/^W)
+)
 
 autoload -U compinit && compinit
 zstyle ':completion:*:(processes|jobs)' menu yes select=2
@@ -146,8 +154,8 @@ alias uninstallapp='adb shell pm list package | sed -e s/package:// | peco | xar
 alias ardour='ardour4 &'
 alias touchscreen_enable='xinput set-int-prop "ELAN Touchscreen" "Device Enabled" 8 1'
 alias touchscreen_disable='xinput set-int-prop "ELAN Touchscreen" "Device Enabled" 8 0'
-alias touchpad_enable='xinput set-int-prop "PS/2 BYD TouchPad" "Device Enabled" 8 1'
-alias touchpad_disable='xinput set-int-prop "PS/2 BYD TouchPad" "Device Enabled" 8 0'
+alias touchpad_enable='xinput set-int-prop "PS/2 Generic Mouse" "Device Enabled" 8 1'
+alias touchpad_disable='xinput set-int-prop "PS/2 Generic Mouse" "Device Enabled" 8 0'
 
 # cdコマンド実行後、lsを実行する
 function cd() {
@@ -156,6 +164,11 @@ function cd() {
 
 ### rbenv ###
 eval "$(rbenv init -)"
+
+### pyenv ###
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
 
 ### powerline ###
 . ~/.local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh

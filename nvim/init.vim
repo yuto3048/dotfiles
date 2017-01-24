@@ -32,9 +32,9 @@ if dein#load_state(s:dein_dir)
 
     call dein#load_toml(s:toml, {'lazy': 0})
     call dein#load_toml(s:toml_lazy, {'lazy': 1})
-    if has('nvim')
-        call dein#load_toml(s:toml_dir . '/neovim.toml', {'lazy': 1})
-    endif
+    "if has('nvim')
+    "    call dein#load_toml(s:toml_dir . '/neovim.toml', {'lazy': 1})
+    "endif
 
     call dein#end()
     call dein#save_state()
@@ -44,3 +44,14 @@ if has('vim_starting') && dein#check_install()
     call dein#install()
 endif
 " }}}
+"
+syntax enable
+
+set background=dark
+set ts=4 sw=4 et ws is nowrap 
+set number
+
+let g:seiya_auto_enable=1
+let g:deoplete#enable_at_startup=1
+
+colorscheme solarized
