@@ -16,6 +16,12 @@ repo = 'miyakogi/seiya.vim'
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 
+[[plugins]]
+repo = 'Shougo/vinarise.vim'
+
+[[plugins]]
+repo = 'equalsraf/neovim-gui-shim'
+
 # Lang settings
 # c/c++
 [[plugins]]
