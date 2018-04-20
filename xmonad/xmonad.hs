@@ -9,12 +9,12 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 
 main = do
-  myStatusBar <- spawnPipe "xmobar ~/.xmobarrc_new"
+  myStatusBar <- spawnPipe "xmobar"
   xmonad $ defaultConfig
     { terminal = myTerminal
     , modMask = myModMask
     , workspaces = myWorkspaces
-    , startupHook = myStartupHook
+--    , startupHook = myStartupHook
     , layoutHook = myLayoutHook
     , manageHook = myManageHook
     , logHook = myLogHook myStatusBar
@@ -26,8 +26,8 @@ myTerminal = "terminator"
 myModMask = mod4Mask
 myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 
-myStartupHook = do
-    spawnOnce = "nm-applet"
+--myStartupHook = do
+--    spawnOnce "nm-applet"
 
 myLayoutHook = avoidStruts $ layoutHook defaultConfig
 myManageHook = manageDocks <+> manageHook defaultConfig
