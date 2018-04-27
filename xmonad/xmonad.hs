@@ -8,6 +8,10 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.Spacing
+import XMonad.Layout.Gaps
+
 main = do
   myStatusBar <- spawnPipe "xmobar"
   xmonad $ defaultConfig
@@ -29,7 +33,9 @@ myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 --myStartupHook = do
 --    spawnOnce "nm-applet"
 
-myLayoutHook = avoidStruts $ layoutHook defaultConfig
+--myLayoutHook = avoidStruts $ ResizableTall 1 (3/100) (1/2) []
+myLayoutHook = avoidStruts $ gaps [(U,4),(D,24),(L,26),(R,26)]
+                    $ layoutHook defaultConfig
 myManageHook = manageDocks <+> manageHook defaultConfig
 myLogHook h = dynamicLogWithPP xmobarPP 
     { ppOutput = hPutStrLn h
