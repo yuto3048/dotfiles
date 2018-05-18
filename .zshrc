@@ -175,6 +175,9 @@ eval "$(pyenv init -)"
 ### powerline ###
 . ~/.local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 
+### nvm ###
+source /usr/share/nvm/init-nvm.sh
+
 # Created by newuser for 5.0.7
 export GTK_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
