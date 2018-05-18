@@ -5,6 +5,7 @@ Config { font = "xft:Ricty:size=10:antialias=true"
        , lowerOnStart = True
        , commands = [ Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
                     , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10
+                    , Run Network "wlan0" ["-L","0","-H","32","--normal","green","--high","red"] 10
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Battery ["-t","Batt: <acstatus>","--Low","10","--High","80"
@@ -22,6 +23,6 @@ Config { font = "xft:Ricty:size=10:antialias=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% | %eth0% - %eth1% | %battery% | %date% | %uname%"
+       , template = "%StdinReader% }{ %cpu% | %memory% | %eth0% - %eth1% - %wlan0%| %battery% | %date% | %uname%"
        , overrideRedirect = True
        }
