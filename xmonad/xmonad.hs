@@ -34,7 +34,7 @@ myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 --    spawnOnce "nm-applet"
 
 --myLayoutHook = avoidStruts $ ResizableTall 1 (3/100) (1/2) []
-myLayoutHook = avoidStruts $ gaps [(U,4),(D,24),(L,26),(R,26)]
+myLayoutHook = avoidStruts $ spacing 5 $ gaps [(U,4),(D,24),(L,26),(R,26)]
                     $ layoutHook defaultConfig
 myManageHook = manageDocks <+> manageHook defaultConfig
 myLogHook h = dynamicLogWithPP xmobarPP 
