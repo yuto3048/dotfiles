@@ -22,7 +22,7 @@ main = do
     , layoutHook = myLayoutHook
     , manageHook = myManageHook
     , logHook = myLogHook myStatusBar
---    , handleEventHook = fullscreenEventHook
+    , handleEventHook = fullscreenEventHook
 --    , startupHook = setWMName "LG3D"
     } `additionalKeys` myAdditionalKeys
 
@@ -46,4 +46,5 @@ myAdditionalKeys =
     , ((mod1Mask .|. controlMask, xK_Left ), prevWS)
     , ((mod1Mask .|. shiftMask,   xK_Right), shiftToNext)
     , ((mod1Mask .|. shiftMask,   xK_Left ), shiftToPrev)
+    , ((mod4Mask, xK_p), spawn "rofi -show run")
     ]
