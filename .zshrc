@@ -8,7 +8,7 @@ export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
 export KCODE=u           # KCODEにUTF-8を設定
 export AUTOFEATURE=true  # autotestでfeatureを動かす
 
-setxkbmap -layout jp
+#setxkbmap -layout jp
 
 echo -ne "\033]0;${USER}@${HOST%%.*}\007"
 
@@ -130,6 +130,7 @@ case "${OSTYPE}" in
 esac
 
 export PATH=/home/yuto/Android/Sdk/platform-tools/:/home/yuto/Android/Sdk/tools/:~/.local/bin:~/pidcat/:~/Android/Ndk/:$PATH
+export PATH=/opt/anaconda/bin/:$PATH
 export XDG_CONFIG_HOME=$HOME/.config
 
 path=(
