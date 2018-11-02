@@ -41,3 +41,10 @@ repo = 'octol/vim-cpp-enhanced-highlight'
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
+
+# Vue.js
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+hook_source = '''
+let g:nvim_typescript#vue_support = 1
+'''
