@@ -54,4 +54,6 @@ set number
 let g:seiya_auto_enable=1
 let g:deoplete#enable_at_startup=1
 
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
 colorscheme solarized

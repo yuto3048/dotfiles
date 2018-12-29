@@ -22,6 +22,9 @@ repo = 'Shougo/vinarise.vim'
 [[plugins]]
 repo = 'equalsraf/neovim-gui-shim'
 
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
 # Lang settings
 # c/c++
 [[plugins]]
