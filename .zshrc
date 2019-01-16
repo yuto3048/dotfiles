@@ -174,7 +174,7 @@ export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
 
 ### powerline ###
-. ~/.local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+. ~/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 ### nvm ###
 source /usr/share/nvm/init-nvm.sh

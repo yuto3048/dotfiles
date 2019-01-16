@@ -57,13 +57,13 @@ fi
 export PATH=/home/yuto/Android/Sdk/platform-tools/:$PATH
 export PATH=/home/yuto/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/bin/:$PATH
 
-xsetroot -cursor_name left_ptr
-setxkbmap -layout jp
-syndaemon -i 0.5 -t -k &
+# xsetroot -cursor_name left_ptr
+# setxkbmap -layout jp
+# syndaemon -i 0.5 -t -k &
 
 compton -CGb
-stalonetray &
-nm-applet &
+# stalonetray &
+# nm-applet &
 
 # exec budgie-desktop
 # exec gnome-session

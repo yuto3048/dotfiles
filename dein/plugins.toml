@@ -51,3 +51,7 @@ repo = 'mhartington/nvim-typescript'
 hook_source = '''
 let g:nvim_typescript#vue_support = 1
 '''
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = 'vue'
