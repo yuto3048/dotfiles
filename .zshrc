@@ -3,21 +3,22 @@
 # ------------------------------
 # General Settings
 # ------------------------------
-export EDITOR=vim        # エディタをvimに設定
-export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
-export KCODE=u           # KCODEにUTF-8を設定
-export AUTOFEATURE=true  # autotestでfeatureを動かす
+export EDITOR=nvim                  # エディタをneovimに設定
+export LANG=ja_JP.UTF-8             # 文字コードをUTF-8に設定
+export KCODE=u                      # KCODEにUTF-8を設定
+export AUTOFEATURE=true             # autotestでfeatureを動かす
+export QT_QPA_PLATFORMTHEME="qt5ct" # qt5の設定にqt5ctを使う
 
 #setxkbmap -layout jp
 
 echo -ne "\033]0;${USER}@${HOST%%.*}\007"
 
 
-#bindkey -e               # キーバインドをemacsモードに設定
-bindkey -v              # キーバインドをviモードに設定
+#bindkey -e              # キーバインドをemacsモードに設定
+bindkey -v               # キーバインドをviモードに設定
 
 setopt no_beep           # ビープ音を鳴らさないようにする
-#setopt auto_cd           # ディレクトリ名の入力のみで移動する 
+#setopt auto_cd          # ディレクトリ名の入力のみで移動する 
 setopt auto_pushd        # cd時にディレクトリスタックにpushdする
 setopt correct           # コマンドのスペルを訂正する
 setopt magic_equal_subst # =以降も補完する(--prefix=/usrなど)
@@ -164,6 +165,9 @@ alias touchpad_disable='xinput set-int-prop "PS/2 Generic Mouse" "Device Enabled
 function cd() {
   builtin cd $@ && ls;
 }
+
+### Ruby Gems ###
+export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 
 ### rbenv ###
 eval "$(rbenv init -)"
