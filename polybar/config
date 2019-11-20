@@ -34,7 +34,8 @@ cursor-click = pointer
 
 
 ;====Module settings+======================================
-modules-left = arch explorer google amazon github reddit facebook youtube workspaces-xmonad
+;modules-left = windows explorer google amazon github reddit facebook youtube workspaces-xmonad
+modules-left = arch workspaces-xmonad
 modules-center = date
 modules-right = mpd pkg xbacklight volume wlan cpu-graph memory battery powermenu
 ;==========================================================
@@ -44,11 +45,12 @@ modules-right = mpd pkg xbacklight volume wlan cpu-graph memory battery powermen
 ;====Left modules==========================================
 [module/arch]
 type = custom/text
-content = 
+;content = 
+content = 
 content-padding = 1
 content-foreground = ${colors.fg}
 content-underline = ${colors.adapta-cyan}
-;click-left = rmenu_1
+click-left = rofi --show run
 ;click-right = rmenu_wi_1
 
 [module/apple]

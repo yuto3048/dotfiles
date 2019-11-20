@@ -13,15 +13,15 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.Gaps
 
 main = do
-  myStatusBar <- spawnPipe "xmobar"
+--  myStatusBar <- spawnPipe "xmobar"
   xmonad $ defaultConfig
     { terminal = myTerminal
     , modMask = myModMask
     , workspaces = myWorkspaces
---    , startupHook = myStartupHook
+    , startupHook = myStartupHook
     , layoutHook = myLayoutHook
     , manageHook = myManageHook
-    , logHook = myLogHook myStatusBar
+--    , logHook = myLogHook myStatusBar
     , handleEventHook = fullscreenEventHook
 --    , startupHook = setWMName "LG3D"
     } `additionalKeys` myAdditionalKeys
@@ -30,16 +30,17 @@ myTerminal = "terminator"
 myModMask = mod4Mask
 myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 
---myStartupHook = do
+myStartupHook = do
+    spawn "$HOME/.config/polybar/launch.sh"
 --    spawnOnce "nm-applet"
 
 --myLayoutHook = avoidStruts $ ResizableTall 1 (3/100) (1/2) []
-myLayoutHook = avoidStruts $ spacing 5 $ gaps [(U,4),(D,24),(L,26),(R,26)]
+myLayoutHook = avoidStruts $ spacing 5 $ gaps [(U,24),(D,4),(L,26),(R,26)]
                     $ layoutHook defaultConfig
 myManageHook = manageDocks <+> manageHook defaultConfig
-myLogHook h = dynamicLogWithPP xmobarPP 
-    { ppOutput = hPutStrLn h
-    }
+--myLogHook h = dynamicLogWithPP xmobarPP 
+--    { ppOutput = hPutStrLn h
+--    }
 
 myAdditionalKeys = 
     [ ((mod1Mask .|. controlMask, xK_Right), nextWS)
